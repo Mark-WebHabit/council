@@ -23,6 +23,16 @@
   transition: background 0.3s ease;
 }
 
+.linear-gradient-nav {
+  background: rgb(131, 46, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 46, 255, 1) 22%,
+    rgba(254, 79, 242, 1) 100%
+  );
+  transition: background 0.3s ease;
+}
+
 .linear-gradient:hover {
   background: transparent;
 }

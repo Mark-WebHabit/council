@@ -13,7 +13,7 @@ function NavBar() {
   };
 
   return (
-    <div className="fixed h-[80px] w-screen linear-gradient flex items-center justify-between px-4 gap-4 overflow-x-scroll no-scrollbar z-100">
+    <div className="fixed h-[80px] w-screen linear-gradient-nav flex items-center justify-between px-4 gap-4 overflow-x-scroll no-scrollbar z-100">
       <div className="logo flex items-center gap-2">
         <img
           src="/images/logo.png"
