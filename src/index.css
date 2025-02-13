@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+@theme {
+  --breakpoint-900: 900px;
+  --breakpoint-1600: 1600px;
+}
+
+:root {
+  --reduced-nav: calc(100vh - 80px);
+  --bg: #281549;
+  --pink: rgb(255, 79, 243);
+  --fade-pink: rgba(255, 79, 243, 0.05);
+}
+
+.linear-gradient {
+  background: rgb(131, 46, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 46, 255, 1) 22%,
+    rgba(254, 79, 242, 1) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.linear-gradient:hover {
+  background: transparent;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.center-x {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.center-y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.shadow-text {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3), 1px -1px 0 rgba(0, 0, 0, 0.3),
+    -1px 1px 0 rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.3),
+    0 0 4px rgba(255, 255, 255, 0.7), 0 0 8px rgba(255, 255, 255, 0.7),
+    0 0 12px rgba(255, 255, 255, 0.7), 0 0 16px rgba(255, 255, 255, 0.7);
+}
+
+.shadow-text-pink {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3), 1px -1px 0 rgba(0, 0, 0, 0.3),
+    -1px 1px 0 rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.3), 0 0 4px #ff4ff3,
+    0 0 8px #ff4ff3, 0 0 12px #ff4ff3, 0 0 16px #ff4ff3;
+}
