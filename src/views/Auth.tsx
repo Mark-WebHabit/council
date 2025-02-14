@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import { useSearchParams } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Input = ({
   type,
@@ -23,6 +25,15 @@ function Auth() {
   const [search] = useSearchParams();
 
   useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
+
+  useEffect(() => {
     const page = search.get("page");
 
     if (page && page.toLowerCase() === "register") {
@@ -41,7 +52,10 @@ function Auth() {
       <NavBar />
 
       <div className=" pt-[80px] flex flex-col md:flex-row items-center">
-        <div className="flex-1 h-full grid place-items-center mt-5">
+        <div
+          className="flex-1 h-full grid place-items-center mt-5"
+          data-aos="fade-right"
+        >
           <div className="w-full  max-w-[700px] border p-8 lg:p-16 linear-gradient-bg lg:rounded-[60px]">
             <h1 className="text-4xl text-white font-bold text-center">
               {isSignup ? "REGISTER FORM" : "LOGIN FORM"}
@@ -95,7 +109,7 @@ function Auth() {
             </div>
           </div>
         </div>
-        <div className="flex-1 h-full">
+        <div className="flex-1 h-full" data-aos="fade-left">
           <div className="w-full h-full p-16">
             <h1 className="text-center text-2xl md:text-3xl lg:text-5xl trend shadow-text text-white">
               sign in or sign up

@@ -98,12 +98,18 @@ function Home() {
             THROUGH US DEAR USER{" "}
           </p>
           <div className="flex items-center justify-between w-full max-w-[800px] mt-20">
-            <button className="flex-1 mx-4 py-4 text-xl md:text-2xl lg:text-4xl poppins-bold text-white rounded-full linear-gradient-nav  cursor-pointer ">
+            <button
+              className="flex-1 mx-4 py-4 text-xl md:text-2xl lg:text-4xl poppins-bold text-white rounded-full linear-gradient-nav  cursor-pointer "
+              onClick={() => navigate("/auth?page=register")}
+            >
               SIGN UP
             </button>
 
-            <button className="flex-1   mx-4 py-4  text-xl md:text-2xl lg:text-4xl poppins-bold text-white  cursor-pointer rounded-full about-button">
-              SIGN UP
+            <button
+              className="flex-1   mx-4 py-4  text-xl md:text-2xl lg:text-4xl poppins-bold text-white  cursor-pointer rounded-full about-button"
+              onClick={() => navigate("/auth")}
+            >
+              SIGN IN
             </button>
           </div>
         </div>
