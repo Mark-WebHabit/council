@@ -14,7 +14,7 @@ const Input = ({
   return (
     <input
       type={type}
-      className="w-[90%] border-2 border-white bg-[var(--gray)] px-4 py-4 rounded-[30px] placeholder:text-white placeholder:text-2xl placeholder:font-bold placeholder:text-center outline-0"
+      className="w-[90%] my-4 border-2 border-white bg-[var(--gray)] px-4 py-4 rounded-[30px] placeholder:text-white placeholder:text-2xl placeholder:font-bold placeholder:text-center outline-0"
       placeholder={placeholder}
     />
   );
@@ -43,8 +43,8 @@ function Auth() {
     }
   }, [search]);
 
-  const handleChangePage = () => {
-    setIsSignup(!isSignup);
+  const handleChangePage = (val: boolean) => {
+    setIsSignup(val);
   };
 
   return (
@@ -67,7 +67,7 @@ function Auth() {
                 className={`px-8 py-4 cursor-pointer ${
                   isSignup ? "about-button" : "linear-gradient-nav"
                 } text-white font-bold text-xl lg:text-2xl rounded-full`}
-                onClick={handleChangePage}
+                onClick={() => handleChangePage(true)}
               >
                 SIGN UP
               </button>
@@ -75,37 +75,49 @@ function Auth() {
                 className={`px-8 py-4 cursor-pointer ${
                   !isSignup ? "about-button" : "linear-gradient-nav"
                 } text-white font-bold text-xl lg:text-2xl rounded-full `}
-                onClick={handleChangePage}
+                onClick={() => handleChangePage(false)}
               >
                 SIGN IN
               </button>
             </div>
 
-            <div className="w-[98%] md:w-[90%] bg-[var(--yellow)] p-4 mx-auto mt-8 rounded-[30px] flex gap-8 flex-col items-center pt-16 px-8">
+            <div className="w-[98%] md:w-[90%] bg-[var(--yellow)] p-4 mx-auto mt-8 rounded-[30px] flex  flex-col items-center pt-16 px-8">
               <Input type="email" placeholder="ENTER YOUR EMAIL" />
               <Input type="email" placeholder="ENTER YOUR PASSWORD" />
               {isSignup && (
                 <Input type="email" placeholder="CONFIRM YOUR PASSWORD" />
               )}
               <div className="w-[90%]">
-                <div className="flex items-center gap-2">
-                  <div className="w-[20px] aspect-square bg-[var(--gray)] border-2 border-white" />
-                  <p className="text-white text-xl font-bold">REMEMBER ME</p>
-                </div>
-                <div className="flex items-center gap-2 mt-4 mb-8">
-                  <div className="w-[20px] aspect-square bg-[var(--gray)] border-2 border-white" />
-                  <p
-                    className="text-white text-md font-bold uppercase"
-                    style={{
-                      lineHeight: "16px",
-                    }}
-                  >
-                    i have read the terms and conditions
-                  </p>
-                </div>
+                {!isSignup && (
+                  <div className="flex items-center gap-2 mt-4">
+                    <div className="w-[20px] aspect-square bg-[var(--gray)] border-2 border-white" />
+                    <p className="text-white text-xl font-bold">REMEMBER ME</p>
+                  </div>
+                )}
+                {isSignup && (
+                  <div className="flex items-center gap-2 mt-4 ">
+                    <div className="w-[20px] aspect-square bg-[var(--gray)] border-2 border-white" />
+                    <p
+                      className="text-white text-md font-bold uppercase"
+                      style={{
+                        lineHeight: "16px",
+                      }}
+                    >
+                      i have read the terms and conditions
+                    </p>
+                  </div>
+                )}
               </div>
 
-              <small className="text-blue-700">TERMS AND CONDITIONS</small>
+              {isSignup && (
+                <small className="text-blue-700">TERMS AND CONDITIONS</small>
+              )}
+
+              <div className="w-full flex justify-end mt-4">
+                <button className="linear-gradient-nav px-6 py-2 text-2xl text-white font-bold rounded-[30px] ">
+                  SUBMIT
+                </button>
+              </div>
             </div>
           </div>
         </div>
