@@ -4,6 +4,19 @@
 @theme {
   --breakpoint-900: 900px;
   --breakpoint-1600: 1600px;
+  --blue: #323c8c;
+}
+
+@font-face {
+  font-family: "Trend Sans Five";
+  src: url("/fonts/trend-sans-five.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Trend Sans One";
+  src: url("/fonts/Trend-Sans-One-Regular.ttf") format("truetype");
 }
 
 :root {
@@ -11,6 +24,15 @@
   --bg: #281549;
   --pink: rgb(255, 79, 243);
   --fade-pink: rgba(255, 79, 243, 0.05);
+}
+
+body {
+  background-color: #281549;
+}
+
+.max {
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 .linear-gradient {
@@ -22,6 +44,40 @@
   );
   transition: background 0.3s ease;
 }
+.about-button {
+  position: relative;
+  border-radius: 50px; /* Adjust border-radius as needed */
+  transition: all 0.3s ease;
+  background: transparent;
+  overflow: hidden;
+}
+
+.about-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 3px; /* Adjust the border width as needed */
+  background: linear-gradient(
+    90deg,
+    rgba(131, 46, 255, 1) 22%,
+    rgba(254, 79, 242, 1) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.about-button:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(131, 46, 255, 1) 22%,
+    rgba(254, 79, 242, 1) 100%
+  );
+}
 
 .linear-gradient-nav {
   background: rgb(131, 46, 255);
@@ -31,6 +87,18 @@
     rgba(254, 79, 242, 1) 100%
   );
   transition: background 0.3s ease;
+}
+
+.gradient-border {
+  border: 3px solid; /* Adjust the border width as needed */
+  /* border-image: linear-gradient(
+      90deg,
+      rgba(131, 46, 255, 1) 22%,
+      rgba(254, 79, 242, 1) 100%
+    )
+    1; */
+  padding: 20px; /* Adjust padding as needed */
+  transition: border-image 0.3s ease;
 }
 
 .linear-gradient:hover {
