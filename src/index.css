@@ -4,7 +4,6 @@
 @theme {
   --breakpoint-900: 900px;
   --breakpoint-1600: 1600px;
-  --blue: #323c8c;
 }
 
 @font-face {
@@ -24,6 +23,10 @@
   --bg: #281549;
   --pink: rgb(255, 79, 243);
   --fade-pink: rgba(255, 79, 243, 0.05);
+  --blue: #323c8c;
+  --yellow: #cdaf0d;
+  --darkpurple: rgb(60, 6, 139);
+  --gray: #d9d9d9;
 }
 
 body {
@@ -40,6 +43,16 @@ body {
   background: linear-gradient(
     90deg,
     rgba(131, 46, 255, 1) 22%,
+    rgba(254, 79, 242, 1) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.linear-gradient-bg {
+  background: rgb(131, 46, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(60, 6, 139, 1) 50%,
     rgba(254, 79, 242, 1) 100%
   );
   transition: background 0.3s ease;
@@ -90,13 +103,7 @@ body {
 }
 
 .gradient-border {
-  border: 3px solid; /* Adjust the border width as needed */
-  /* border-image: linear-gradient(
-      90deg,
-      rgba(131, 46, 255, 1) 22%,
-      rgba(254, 79, 242, 1) 100%
-    )
-    1; */
+  border: 3px solid;
   padding: 20px; /* Adjust padding as needed */
   transition: border-image 0.3s ease;
 }
