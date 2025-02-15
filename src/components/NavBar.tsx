@@ -26,7 +26,7 @@ function NavBar() {
       </div>
 
       <div className="flex-1 flex justify-end items-center gap-4 mr-8">
-        <Button text="POSTS" path="/" />
+        <Button text="POSTS" path="/posts" />
         <Button text="EVENTS" path="/" />
         <Button text="ARTICLES" path="/" />
         <Button text="COFESSIONS" path="/" />
